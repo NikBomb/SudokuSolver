@@ -5,12 +5,13 @@
 #include <math.h>
 
 using namespace std;
+/*Class That implements the sudoku as a double array*/
 class Sudoku {
 private:
 	int grid[9][9];
 public:
 	Sudoku(int clues[9][9]);
-	Sudoku() {
+	Sudoku() {    /*Method to initialise the Sudoku to zeros*/
 		int igrid;
 		int jgrid;
 		for (igrid = 0; igrid < 9; igrid++)
@@ -21,9 +22,9 @@ public:
 			}
 		}
 	};
-	int getgrid(int i, int j);
-	bool solve();
-	bool checktrial(int trial,int igrid,int jgrid);
+	int getgrid(int i, int j); /*get the value at a position over the grid*/
+	bool solve(); /*Solve the Sudoku */
+	bool checktrial(int trial,int igrid,int jgrid); /*Check if the trial number can sit in its position*/
 };
 
 Sudoku::Sudoku(int clues[9][9]) {
@@ -155,7 +156,7 @@ bool Sudoku::checktrial(int trial, int igrid, int jgrid)
 };
 
 
-int main()
+int main()   /*Driver program, with a trial sudoku*/
 {
 	
 	int clues[9][9];
